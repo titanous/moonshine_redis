@@ -10,7 +10,7 @@ module Moonshine
     #
     #  recipe :redis
     def redis(options={})
-      options = { :enable_on_boot => true }.merge(options)
+      options = options.reverse_merge({ :enable_on_boot => true })
       arch = options[:arch] || 'amd64'
       version = options[:version] || '2.0.1-2'
 
